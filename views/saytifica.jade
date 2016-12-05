@@ -1,0 +1,13 @@
+extends layout
+block content
+    h3.
+        Saytifica
+    ul
+        each saytificon, i in saytifica
+            li#saytificon
+                a(href="/saytifica/"+i) #{saytificon.name} (#{saytificon.aka})
+                div #{saytificon.definition}
+                div(style="height:400px;")
+                    iframe(src="http://www.youtube.com/embed/"+saytificon.video,width="100%" height="100%",style="overflow:hidden;height:100%;width:100%",frameborder="0" allowfullscreen)
+                a(href="/categories/"+saytificon.category) #{saytificon.category}
+
